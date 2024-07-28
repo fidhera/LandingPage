@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'> <!-- Menghubungkan ke pustaka ikon Boxicons -->
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Menghubungkan ke file CSS -->
+    <title>Login - Toko Ratu</title> <!-- Judul halaman -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="l-header"> <!-- Header halaman -->
+        <nav class="nav bd-grid"> <!-- Navigasi dengan grid -->
+            <div class="logo"> <!-- Bagian logo -->
+                <a href="index.html" class="nav__logo">Toko Ratu</a> <!-- Tautan ke halaman utama dengan teks "Toko Ratu" -->
+            </div>
+            <div class="nav__toggle" id="nav-toggle"> <!-- Tombol toggle untuk menu (hanya muncul di tampilan mobile) -->
+                <i class='bx bx-menu'></i> <!-- Ikon menu dari Boxicons -->
+            </div>
+            <div class="nav__menu" id="nav-menu"> <!-- Menu navigasi -->
+                <div class="nav__close" id="nav-close"> <!-- Tombol close untuk menu (hanya muncul di tampilan mobile) -->
+                    <i class='bx bx-x'></i> <!-- Ikon close dari Boxicons -->
+                </div>
+                <ul class="nav__list"> <!-- Daftar item navigasi -->
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li> <!-- Tautan ke halaman Home -->
+                    <li class="nav__item"><a href="about.html" class="nav__link">About</a></li> <!-- Tautan ke halaman About -->
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li> <!-- Tautan ke halaman Blog -->
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li> <!-- Tautan ke halaman Contact -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main"> <!-- Konten utama halaman -->
+        <section class="login" id="login"> <!-- Bagian login -->
+            <div class="login__container bd-grid"> <!-- Container untuk formulir login -->
+                <h1 class="login__title">Login</h1> <!-- Judul login -->
+                <form id="loginForm" class="login__form"> <!-- Formulir login -->
+                    <div class="login__content"> <!-- Input untuk username -->
+                        <input type="text" id="username" placeholder="Username" class="login__input" required>
+                    </div>
+                    <div class="login__content"> <!-- Input untuk password -->
+                        <input type="password" id="password" placeholder="Password" class="login__input" required>
+                    </div>
+                    <input type="submit" value="Login" class="login__button"> <!-- Tombol submit login -->
+                    <p class="login__signup">Don't have an account? <a href="signup.html">Sign Up</a></p> <!-- Tautan ke halaman sign up -->
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript untuk validasi login -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form dari pengiriman default
+
+            var username = document.getElementById('username').value; // Mengambil nilai username
+            var password = document.getElementById('password').value; // Mengambil nilai password
+
+            if (username === 'admin' && password === '12345') { // Memeriksa username dan password
+                window.location.href = 'dashboard.html'; // Mengarahkan ke dashboard jika benar
+            } else {
+                alert('Invalid username or password'); // Menampilkan alert jika salah
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script> <!-- Menghubungkan ke pustaka GSAP untuk animasi -->
+</body>
+</html>
